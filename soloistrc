@@ -24,9 +24,15 @@ recipes:
 - workstation::fish_shell
 
 #
-# Projects
+# Development (general)
 #
 - sprout-git::projects
+
+#
+# development (ruby, rails)
+#
+- sprout-rbenv
+- sprout-ruby
 
 node_attributes:
   workspace_directory: Work
@@ -39,6 +45,11 @@ node_attributes:
       email: john.bernas@gmail.com
 
   sprout:
+    rbenv:
+      rubies:
+      - 2.1.2
+      default_ruby: 2.1.2
+
     git:
       projects:
         -

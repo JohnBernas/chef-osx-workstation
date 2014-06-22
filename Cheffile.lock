@@ -39,6 +39,23 @@ GIT
       sprout-base (>= 0.0.0)
 
 GIT
+  remote: https://github.com/pivotal-sprout/sprout-rbenv
+  ref: master
+  sha: debef8e115b6188dfe5c8c5cade3c04a6b31b087
+  specs:
+    sprout-rbenv (0.1.0)
+      homebrew (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+
+GIT
+  remote: https://github.com/pivotal-sprout/sprout-ruby
+  ref: master
+  sha: dfc96330f8dee89f96c0f2e14dce87c7e03a2359
+  specs:
+    sprout-ruby (0.1.0)
+      sprout-base (>= 0.0.0)
+
+GIT
   remote: https://github.com/pivotal-sprout/sprout-ssh
   ref: master
   sha: 157fffbc948ceecb1ae7caa5ff3732137a628589
@@ -62,6 +79,8 @@ DEPENDENCIES
   sprout-git (>= 0)
   sprout-homebrew (>= 0)
   sprout-osx-settings (>= 0)
+  sprout-rbenv (>= 0)
+  sprout-ruby (>= 0)
   sprout-ssh (>= 0)
   workstation (>= 0)
   workstation-settings (>= 0)

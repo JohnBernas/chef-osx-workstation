@@ -12,6 +12,12 @@ cookbook 'sprout-ssh',
 cookbook 'sprout-git',
   :github => 'pivotal-sprout/sprout-git'
 
+cookbook 'sprout-rbenv',
+  :github => 'pivotal-sprout/sprout-rbenv'
+
+cookbook 'sprout-ruby',
+  :github => 'pivotal-sprout/sprout-ruby'
+
 
 cookbook 'workstation',
   :path => 'workstation'
