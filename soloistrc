@@ -34,6 +34,12 @@ recipes:
 - sprout-rbenv
 - sprout-ruby
 
+#
+# development (databases)
+#
+- sprout-mysql
+- sprout-postgresql
+
 node_attributes:
   workspace_directory: Work
 

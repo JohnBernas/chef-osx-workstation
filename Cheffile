@@ -18,6 +18,12 @@ cookbook 'sprout-rbenv',
 cookbook 'sprout-ruby',
   :github => 'pivotal-sprout/sprout-ruby'
 
+cookbook 'sprout-postgresql',
+  :github => 'pivotal-sprout/sprout-postgresql'
+
+cookbook 'sprout-mysql',
+  :github => 'pivotal-sprout/sprout-mysql'
+
 
 cookbook 'workstation',
   :path => 'workstation'

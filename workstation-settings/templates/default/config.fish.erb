@@ -14,3 +14,10 @@ set -U CDPATH . $HOME/Work
 
 # Add identities to ssh-agent if they are not added already
 ssh-add -l | grep "The agent has no identities"; and ssh-add
+
+#
+# rbenv
+#
+set PATH $HOME/.rbenv/bin $PATH
+set PATH $HOME/.rbenv/shims $PATH
+rbenv rehash >/dev/null ^&1
