@@ -17,7 +17,7 @@ end
   end
 end
 
-%w{git custom}.each do |fish_config|
+%w{git ruby bundler custom}.each do |fish_config|
   template "#{node['sprout']['home']}/.config/fish/plugins/#{fish_config}.fish" do
     source "fish/plugins/#{fish_config}.fish.erb"
     user node['current_user']

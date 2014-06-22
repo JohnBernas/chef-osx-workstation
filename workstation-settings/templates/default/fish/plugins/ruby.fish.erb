@@ -1,0 +1,16 @@
+#
+# RUBY
+#
+
+#
+# rbenv
+#
+function rb;	rbenv version; end;
+function rbl;	rbenv versions; end;
+function rbi
+  if test "$argv"
+    rbenv install $argv
+  else
+    rbenv install -l
+  end
+end

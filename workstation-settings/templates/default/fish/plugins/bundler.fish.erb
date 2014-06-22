@@ -1,0 +1,13 @@
+#
+# bundler
+#
+function bu;    bundle update $argv; end
+function bi;    bundle install $argv; end
+function be;    bundle exec $argv; end
+function b;     bundle $argv; end
+
+function bejobs; bundle exec rake jobs:work; end;
+
+function ts;    bundle exec rake spec $argv; end
+function tc;    bundle exec rake cucumber $argv; end
+function rr;    bundle exec rake routes $argv; end
