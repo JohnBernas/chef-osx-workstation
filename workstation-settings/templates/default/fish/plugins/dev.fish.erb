@@ -3,3 +3,17 @@
 #
 
 function tld; tail -f log/development.log; end
+
+
+#
+# ViaViela Portal
+#
+
+function vvpdb
+  curl -o production.dump (heroku pgbackups:url -a portal-production)
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d viaviela_portal_development production.dump
+end
+
+function vvprestore
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d viaviela_portal_development $argv
+end
