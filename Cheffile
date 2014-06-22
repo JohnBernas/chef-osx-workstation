@@ -33,6 +33,9 @@ cookbook 'workstation',
 cookbook 'workstation-settings',
   :path => 'workstation-settings'
 
+cookbook 'osx-settings',
+  :path => 'osx-settings'
+
 # Dependencies
 
 cookbook 'osx',

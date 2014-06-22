@@ -1,0 +1,7 @@
+maintainer        "Joao Bernardino"
+maintainer_email  "john.bernas@gmail.com"
+license           "MIT"
+description       "Configure OSX settings"
+long_description  "Configure OSX settings"
+version           "0.1.0"
+supports          "mac_os_x"

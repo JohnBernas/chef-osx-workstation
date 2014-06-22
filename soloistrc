@@ -11,11 +11,15 @@ recipes:
 #
 # OSX Settings
 #
-- sprout-osx-settings::dock_preferences
-- sprout-osx-settings::finder_display_full_path
+- osx-settings::dock
+- osx-settings::finder
+- osx-settings::desktop
+- osx-settings::sound
+- osx-settings::mouse
+- osx-settings::multitouch
+- osx-settings::hot_corners
+- osx-settings::remove_garageband
 - sprout-osx-settings::function_keys
-- sprout-osx-settings::remove_garageband
-- sprout-osx-settings::set_multitouch_preferences
 
 #
 # Settings
@@ -59,6 +63,14 @@ node_attributes:
       name: João Bernardino
       email: john.bernas@gmail.com
 
+  osx:
+    dock:
+      orientation: 'bottom'
+      autohide: true
+      clear: true
+      tilesize: 35
+      magnification': false
+
   sprout:
     rbenv:
       rubies:
@@ -96,10 +108,3 @@ node_attributes:
         - sizeup
         - transmission
         - flux
-
-    dock_preferences:
-      orientation: 'bottom'
-      auto_hide: true
-      clear_apps: true
-      tile_size: 35
-      magnification': false
