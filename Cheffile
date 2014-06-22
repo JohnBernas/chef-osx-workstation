@@ -24,6 +24,8 @@ cookbook 'sprout-postgresql',
 cookbook 'sprout-mysql',
   :github => 'pivotal-sprout/sprout-mysql'
 
+cookbook 'sprout-osx-settings',
+  :github => 'pivotal-sprout/sprout-osx-settings'
 
 cookbook 'workstation',
   :path => 'workstation'
@@ -32,5 +34,6 @@ cookbook 'workstation-settings',
   :path => 'workstation-settings'
 
 # Dependencies
-cookbook 'sprout-osx-settings',
-  :github => 'pivotal-sprout/sprout-osx-settings'
+
+cookbook 'osx',
+  :github => 'pivotal-sprout/osx'

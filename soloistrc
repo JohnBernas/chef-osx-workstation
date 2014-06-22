@@ -9,6 +9,15 @@ recipes:
 - sprout-homebrew
 
 #
+# OSX Settings
+#
+- sprout-osx-settings::dock_preferences
+- sprout-osx-settings::finder_display_full_path
+- sprout-osx-settings::function_keys
+- sprout-osx-settings::remove_garageband
+- sprout-osx-settings::set_multitouch_preferences
+
+#
 # Settings
 #
 - sprout-base::user_owns_usr_local
@@ -87,3 +96,10 @@ node_attributes:
         - sizeup
         - transmission
         - flux
+
+    dock_preferences:
+      orientation: 'bottom'
+      auto_hide: true
+      clear_apps: true
+      tile_size: 35
+      magnification': false
