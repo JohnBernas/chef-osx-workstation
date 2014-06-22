@@ -9,6 +9,9 @@ cookbook 'sprout-homebrew',
 cookbook 'sprout-ssh',
   :github => 'pivotal-sprout/sprout-ssh'
 
+cookbook 'sprout-git',
+  :github => 'pivotal-sprout/sprout-git'
+
 
 cookbook 'workstation-settings',
   :path => 'workstation-settings'

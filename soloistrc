@@ -1,12 +1,16 @@
 recipes:
 
+#
 # base (required by sprout)
+#
 - sprout-base
 - sprout-base::bash_it
 - sprout-base::homebrew
 - sprout-homebrew
 
+#
 # Settings
+#
 - sprout-base::user_owns_usr_local
 - sprout-base::workspace_directory
 #- workstation-settings::project_directories
@@ -15,10 +19,23 @@ recipes:
 - sprout-ssh::known_hosts
 - workstation-settings::ssh
 
+- sprout-git::install
+- workstation-settings::git
+
+#
+# Projects
+#
+- sprout-git::projects
+
 node_attributes:
   workspace_directory: Work
 
   ssh_keys_location: /Volumes/Woohoo/ssh/keys #insert something meaningful here
+
+  git:
+    user:
+      name: João Bernardino
+      email: john.bernas@gmail.com
 
   sprout:
     homebrew:
