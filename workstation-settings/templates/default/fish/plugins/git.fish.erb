@@ -1,0 +1,41 @@
+#
+# GIT
+#
+function g;     git $argv; end
+function gst;   git status -sb $argv; end
+
+function gp;    git push $argv; end
+function gpush; git push $argv; end
+function gpnew; git push -u origin $argv; end
+function gl;    git pull $argv; end
+function gpull; git pull $argv; end
+
+function gco;   git checkout $argv; end
+function gcd;   git checkout develop; end
+function gcm;   git checkout master; end
+function gcb;   git checkout -b $argv; end
+function gct;   git checkout -b $argv origin/$argv; end
+function gctag; git checkout -b $argv $argv; end
+function gci
+  if test "$argv"
+    git commit -m $argv
+  else
+    git commit
+  end
+end
+
+
+function gb;    git branch $argv; end
+function gba;   git branch -a $argv; end
+function gbdel; git branch -D $argv; end
+
+function ga;    git add; end
+function gaa;   git add -A $argv; end
+function gap;   git add --p; end
+
+function gm;    git merge $argv; end
+
+function gtag;  git tag $argv; end
+function gptag; gpush --tags; end
+
+function gx;    gitx --all; end

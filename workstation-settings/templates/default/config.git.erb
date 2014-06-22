@@ -1,0 +1,16 @@
+[user]
+  email = <%= node['git']['user']['email'] %>
+  name = <%= node['git']['user']['name'] %>
+
+[push]
+  default = current
+
+[core]
+	excludesfile = ~/.gitignore
+
+[color]
+	ui = true
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto

@@ -13,6 +13,9 @@ cookbook 'sprout-git',
   :github => 'pivotal-sprout/sprout-git'
 
 
+cookbook 'workstation',
+  :path => 'workstation'
+
 cookbook 'workstation-settings',
   :path => 'workstation-settings'
 

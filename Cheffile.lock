@@ -48,6 +48,11 @@ GIT
       sprout-osx-settings (>= 0.0.0)
 
 PATH
+  remote: workstation
+  specs:
+    workstation (1.0.0)
+
+PATH
   remote: workstation-settings
   specs:
     workstation-settings (1.0.0)
@@ -58,5 +63,6 @@ DEPENDENCIES
   sprout-homebrew (>= 0)
   sprout-osx-settings (>= 0)
   sprout-ssh (>= 0)
+  workstation (>= 0)
   workstation-settings (>= 0)
 

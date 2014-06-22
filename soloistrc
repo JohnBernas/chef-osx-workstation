@@ -15,12 +15,13 @@ recipes:
 - sprout-base::workspace_directory
 #- workstation-settings::project_directories
 
-- sprout-ssh::dot_ssh
-- sprout-ssh::known_hosts
 - workstation-settings::ssh
-
 - sprout-git::install
 - workstation-settings::git
+- workstation-settings::fish
+
+# Development tools & libs
+- workstation::fish_shell
 
 #
 # Projects
@@ -30,7 +31,7 @@ recipes:
 node_attributes:
   workspace_directory: Work
 
-  ssh_keys_location: /Volumes/Woohoo/ssh/keys #insert something meaningful here
+#  ssh_keys_location: /Volumes/Woohoo/ssh/keys #insert something meaningful here
 
   git:
     user:
@@ -45,6 +46,7 @@ node_attributes:
       casks:
         - alfred
         - atom
+        - iterm2
         - google-chrome
         - google-hangouts
         - firefox
