@@ -67,10 +67,17 @@ node_attributes:
       formulae:
         - wget
         - tmux
+        - ack
       casks:
         - alfred
         - atom
         - iterm2
+        - gitx-rowanj
+        - github
+        - intellij-idea
+        - sequel-pro
+        - heroku-toolbelt
+        - virtualbox
         - google-chrome
         - google-hangouts
         - firefox
@@ -79,3 +86,4 @@ node_attributes:
         - vlc
         - sizeup
         - transmission
+        - flux
