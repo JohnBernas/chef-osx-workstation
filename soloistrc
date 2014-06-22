@@ -13,7 +13,7 @@ recipes:
 #
 - sprout-base::user_owns_usr_local
 - sprout-base::workspace_directory
-#- workstation-settings::project_directories
+- workstation-settings::project_directories
 
 - workstation-settings::ssh
 - sprout-git::install
@@ -39,6 +39,13 @@ node_attributes:
       email: john.bernas@gmail.com
 
   sprout:
+    git:
+      projects:
+        -
+          - chef-osx-workstation
+          - https://github.com/JohnBernas/chef-osx-workstation.git
+          - Work/oss
+
     homebrew:
       formulae:
         - wget

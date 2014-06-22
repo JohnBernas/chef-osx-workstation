@@ -3,7 +3,7 @@ extra_paths = node["project_directories"] || []
 paths += extra_paths if extra_paths
 
 paths.uniq.each do |path|
-  directory path do
+  directory "#{node['sprout']['home']}/#{path}" do
     owner node['current_user']
     mode "0755"
     action :create
