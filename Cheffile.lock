@@ -1,0 +1,24 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    homebrew (1.6.6)
+
+GIT
+  remote: https://github.com/pivotal-sprout/sprout-base
+  ref: master
+  sha: e2649562c9ca53944d80380b1d95beb9c61df60e
+  specs:
+    sprout-base (0.1.0)
+
+GIT
+  remote: https://github.com/pivotal-sprout/sprout-homebrew
+  ref: master
+  sha: 16011679968e3cb66b6772f66b4a79e6f9024561
+  specs:
+    sprout-homebrew (0.1.0)
+      homebrew (>= 1.5.4)
+
+DEPENDENCIES
+  sprout-base (>= 0)
+  sprout-homebrew (>= 0)
+
