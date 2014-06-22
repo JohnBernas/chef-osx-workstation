@@ -2,6 +2,7 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     homebrew (1.6.6)
+    osx (2.0.1)
 
 GIT
   remote: https://github.com/pivotal-sprout/sprout-base
@@ -18,7 +19,34 @@ GIT
     sprout-homebrew (0.1.0)
       homebrew (>= 1.5.4)
 
+GIT
+  remote: https://github.com/pivotal-sprout/sprout-osx-settings
+  ref: master
+  sha: f6bdc1ce298bb8fb204f5fc19bf1d3b587bfab92
+  specs:
+    sprout-osx-settings (0.1.0)
+      homebrew (>= 0.0.0)
+      osx (>= 0.0.0)
+      sprout-base (>= 0.0.0)
+
+GIT
+  remote: https://github.com/pivotal-sprout/sprout-ssh
+  ref: master
+  sha: 157fffbc948ceecb1ae7caa5ff3732137a628589
+  specs:
+    sprout-ssh (0.1.0)
+      sprout-base (>= 0.0.0)
+      sprout-osx-settings (>= 0.0.0)
+
+PATH
+  remote: workstation-settings
+  specs:
+    workstation-settings (1.0.0)
+
 DEPENDENCIES
   sprout-base (>= 0)
   sprout-homebrew (>= 0)
+  sprout-osx-settings (>= 0)
+  sprout-ssh (>= 0)
+  workstation-settings (>= 0)
 

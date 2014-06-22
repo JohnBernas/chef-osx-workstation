@@ -6,13 +6,27 @@ recipes:
 - sprout-base::homebrew
 - sprout-homebrew
 
+# Settings
+- sprout-base::user_owns_usr_local
+- sprout-base::workspace_directory
+#- workstation-settings::project_directories
+
+- sprout-ssh::dot_ssh
+- sprout-ssh::known_hosts
+- workstation-settings::ssh
+
 node_attributes:
+  workspace_directory: Work
+
+  ssh_keys_location: /Volumes/Woohoo/ssh/keys #insert something meaningful here
+
   sprout:
     homebrew:
       formulae:
         - wget
         - tmux
       casks:
+        - alfred
         - atom
         - google-chrome
         - google-hangouts

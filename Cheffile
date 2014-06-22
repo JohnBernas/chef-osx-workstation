@@ -6,3 +6,13 @@ cookbook 'sprout-base',
 cookbook 'sprout-homebrew',
   :github => 'pivotal-sprout/sprout-homebrew'
 
+cookbook 'sprout-ssh',
+  :github => 'pivotal-sprout/sprout-ssh'
+
+
+cookbook 'workstation-settings',
+  :path => 'workstation-settings'
+
+# Dependencies
+cookbook 'sprout-osx-settings',
+  :github => 'pivotal-sprout/sprout-osx-settings'
