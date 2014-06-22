@@ -5,3 +5,20 @@ recipes:
 - sprout-base::bash_it
 - sprout-base::homebrew
 - sprout-homebrew
+
+node_attributes:
+  sprout:
+    homebrew:
+      formulae:
+        - wget
+        - tmux
+      casks:
+        - atom
+        - google-chrome
+        - google-hangouts
+        - firefox
+        - dropbox
+        - skype
+        - vlc
+        - sizeup
+        - transmission
