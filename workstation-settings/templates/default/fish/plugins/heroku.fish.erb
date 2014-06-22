@@ -1,0 +1,66 @@
+#
+# Heroku
+#
+
+function hl       ;		heroku login; end
+
+function hpsql    ;		heroku pg:psql -a $argv; end
+function hcon     ;		heroku run bundle exec rails console -a $argv; end
+function hconsole ; 	hcon $argv; end
+
+function hconf    ; 	heroku config -a $argv; end
+function hconfset ; 	heroku config:set $argv; end
+function hconfadd ; 	hconfset $argv; end
+
+function hrestart ;     heroku restart -a $argv; end
+function hreboot  ;     hrestart $argv; end
+function hboot    ;     hrestart $argv; end
+
+function hmigrate ;     hrake db:migrate -a $argv; end
+function hrake    ;		heroku run bundle exec rake $argv; end
+
+function hlog     ;		heroku logs -a $argv; end
+function hlogt    ;		heroku logs -t -a $argv; end
+
+function hbackups   ;   heroku pgbackups -a $argv; end
+function hdbcapture ;   heroku pgbackups:capture --expire -a $argv; end
+function hdblatest  ;   heroku pgbackups:url -a $argv; end
+function hdburl     ;   heroku pgbackups:url $argv; end
+function hdbdump    ;   wget -O dump.dump `heroku pgbackups:url -a $argv`; end
+
+#function hdbrestore ;   heroku pgbackups:restore -a $argv DATABASE_URL (heroku pgbackups:url -a portal-production) --confirm ; end
+function hdbrestore
+  set TARGET_APP "$argv[1]"
+  set SOURCE_APP "$argv[2]"
+
+  heroku pgbackups:restore -a $TARGET_APP DATABASE_URL (heroku pgbackups:url -a $SOURCE_APP) --confirm $TARGET_APP
+end
+
+function hremote  ;     git remote add $argv git@heroku.com:$argv.git; end
+
+function hdestroy ;     heroku destroy -a $argv --confirm $argv; end
+
+function hfork
+  set SOURCE_APP "$argv[1]"
+  set TARGET_APP "$argv[2]"
+
+  echo "$SOURCE_APP" | grep -q 'production'
+  if test $status = 0
+    echo "DON'T use production environments (found $SOURCE_APP)"
+  else
+    # fork the app!
+    heroku fork -a $SOURCE_APP $TARGET_APP
+
+    # add git remote
+    git remote add $TARGET_APP \
+      (heroku info -a $TARGET_APP | grep 'Git URL' | awk '{ print $3 }')
+
+    # add collaborator
+    echo "Provide Heroku account to add as collaborator ["(set_color -u yellow)(git config --global user.email)(set_color normal)"]: "
+    read collaborator_email
+    if test ! "$collaborator_email"
+      set collaborator_email (git config --global user.email)
+    end
+    heroku sharing:add $collaborator_email -a $TARGET_APP
+  end
+end

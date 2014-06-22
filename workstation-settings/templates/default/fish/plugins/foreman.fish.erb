@@ -1,0 +1,14 @@
+#
+# foreman
+#
+function fs;	 foreman start $argv; end
+function fstart; fs $argv; end
+function fsw;	 foreman start -m 'web=1'; end
+function fsweb;	 fsw; end
+
+function fr;	 foreman run $argv; end
+function frbe;	 foreman run bundle exec $argv; end
+function fspec;  foreman run bundle exec rspec $argv; end
+function frake;  foreman run bundle exec rake $argv; end
+function fcon;	 foreman run bundle exec rails console; end
+function fconsole; fcon; end
