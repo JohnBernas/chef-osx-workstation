@@ -83,6 +83,10 @@ node_attributes:
           - chef-osx-workstation
           - https://github.com/JohnBernas/chef-osx-workstation.git
           - Work/oss
+        -
+          - developer-workstation
+          - https://github.com/kabisaict/developer-workstation.git
+          - Work/kabisa/internal
 
     homebrew:
       formulae:
