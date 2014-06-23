@@ -18,8 +18,8 @@ recipes:
 - osx-settings::mouse
 - osx-settings::multitouch
 - osx-settings::hot_corners
-- osx-settings::remove_garageband
-- sprout-osx-settings::function_keys
+- osx-settings::function_keys
+- sprout-osx-settings::remove_garageband
 
 #
 # Settings
@@ -101,7 +101,6 @@ node_attributes:
         - github
         - intellij-idea
         - sequel-pro
-        - heroku-toolbelt
         - virtualbox
         - google-chrome
         - google-hangouts
