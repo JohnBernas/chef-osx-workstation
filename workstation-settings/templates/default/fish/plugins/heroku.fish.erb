@@ -12,11 +12,21 @@ function hconf    ; 	heroku config -a $argv; end
 function hconfset ; 	heroku config:set $argv; end
 function hconfadd ; 	hconfset $argv; end
 
-function hrestart ;     heroku restart -a $argv; end
-function hreboot  ;     hrestart $argv; end
-function hboot    ;     hrestart $argv; end
+function hboot
+  switch (count $argv)
+    case 0
+      echo "USAGE: "
+      echo "`hboot <app>` - restarts the entire app"
+      echo "`hboot <app> <worker>` - restarts a single worker"
+    case 1
+      heroku restart -a "$argv[1]"
+    case 2
+    heroku ps:restart "$argv[2]" --app "$argv[1]"
+  end
+end
+function hrestart ;   hboot $argv; end
 
-function hmigrate ;     hrake db:migrate -a $argv; end
+function hmigrate ;   hrake db:migrate -a $argv; end
 function hrake    ;		heroku run bundle exec rake $argv; end
 
 function hlog     ;		heroku logs -a $argv; end
@@ -28,12 +38,15 @@ function hdblatest  ;   heroku pgbackups:url -a $argv; end
 function hdburl     ;   heroku pgbackups:url $argv; end
 function hdbdump    ;   wget -O dump.dump `heroku pgbackups:url -a $argv`; end
 
-#function hdbrestore ;   heroku pgbackups:restore -a $argv DATABASE_URL (heroku pgbackups:url -a portal-production) --confirm ; end
 function hdbrestore
-  set TARGET_APP "$argv[1]"
-  set SOURCE_APP "$argv[2]"
-
-  heroku pgbackups:restore -a $TARGET_APP DATABASE_URL (heroku pgbackups:url -a $SOURCE_APP) --confirm $TARGET_APP
+  if test (count $argv) = 2
+    set TARGET_APP "$argv[1]"
+    set SOURCE_APP "$argv[2]"
+    heroku pgbackups:restore -a $TARGET_APP DATABASE_URL (heroku pgbackups:url -a $SOURCE_APP) --confirm $TARGET_APP
+  else
+    echo "USAGE: "
+    echo "`hboot <target app> <source app>` - copies a database from the source to target app"
+  end
 end
 
 function hremote  ;     git remote add $argv git@heroku.com:$argv.git; end
