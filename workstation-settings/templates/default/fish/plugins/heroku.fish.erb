@@ -54,26 +54,32 @@ function hremote  ;     git remote add $argv git@heroku.com:$argv.git; end
 function hdestroy ;     heroku destroy -a $argv --confirm $argv; end
 
 function hfork
-  set SOURCE_APP "$argv[1]"
-  set TARGET_APP "$argv[2]"
 
-  echo "$SOURCE_APP" | grep -q 'production'
-  if test $status = 0
-    echo "DON'T use production environments (found $SOURCE_APP)"
-  else
-    # fork the app!
-    heroku fork -a $SOURCE_APP $TARGET_APP
+  if test (count $argv) = 2
+    set TARGET_APP "$argv[1]"
+    set SOURCE_APP "$argv[2]"
 
-    # add git remote
-    git remote add $TARGET_APP \
-      (heroku info -a $TARGET_APP | grep 'Git URL' | awk '{ print $3 }')
+    echo "$SOURCE_APP" | grep -q 'production'
+    if test $status = 0
+      echo "DON'T use production environments (found $SOURCE_APP)"
+    else
+      # fork the app!
+      heroku fork -a $SOURCE_APP $TARGET_APP
 
-    # add collaborator
-    echo "Provide Heroku account to add as collaborator ["(set_color -u yellow)(git config --global user.email)(set_color normal)"]: "
-    read collaborator_email
-    if test ! "$collaborator_email"
-      set collaborator_email (git config --global user.email)
+      # add git remote
+      git remote add $TARGET_APP \
+        (heroku info -a $TARGET_APP | grep 'Git URL' | awk '{ print $3 }')
+
+      # add collaborator
+      echo "Provide Heroku account to add as collaborator ["(set_color -u yellow)(git config --global user.email)(set_color normal)"]: "
+      read collaborator_email
+      if test ! "$collaborator_email"
+        set collaborator_email (git config --global user.email)
+      end
+      heroku sharing:add $collaborator_email -a $TARGET_APP
     end
-    heroku sharing:add $collaborator_email -a $TARGET_APP
+  else
+    echo "USAGE: "
+    echo "`hfork <target app> <source app>` - creates a new heroku environment 'cloned' from the source app"
   end
 end
