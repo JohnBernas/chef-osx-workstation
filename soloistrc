@@ -11,15 +11,15 @@ recipes:
 #
 # OSX Settings
 #
-- osx-settings::dock
-- osx-settings::finder
-- osx-settings::desktop
-- osx-settings::sound
-- osx-settings::mouse
-- osx-settings::multitouch
-- osx-settings::hot_corners
-- osx-settings::function_keys
-- sprout-osx-settings::remove_garageband
+#- osx-settings::dock
+#- osx-settings::finder
+#- osx-settings::desktop
+#- osx-settings::sound
+#- osx-settings::mouse
+#- osx-settings::multitouch
+#- osx-settings::hot_corners
+#- osx-settings::function_keys
+#- sprout-osx-settings::remove_garageband
 
 #
 # Settings
