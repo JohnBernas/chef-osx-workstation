@@ -74,8 +74,8 @@ node_attributes:
   sprout:
     rbenv:
       rubies:
-      - 2.1.2
-      default_ruby: 2.1.2
+      - 2.1.5
+      default_ruby: 2.1.5
 
     git:
       projects:
