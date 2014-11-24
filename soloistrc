@@ -98,6 +98,8 @@ node_attributes:
       casks:
         - alfred
         - mailbox
+        - textexpander
+        - screenhero
         - iterm2
         - intellij-idea
         - sublime-text3
