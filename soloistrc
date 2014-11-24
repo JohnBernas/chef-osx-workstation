@@ -95,12 +95,12 @@ node_attributes:
         - ack
       casks:
         - alfred
-        - atom
+        - mailbox
         - iterm2
-        - gitx-rowanj
-        - github
         - intellij-idea
-        - sublime-text
+        - sublime-text3
+        - atom
+        - rowanj-gitx
         - sequel-pro
         - virtualbox
         - google-chrome
