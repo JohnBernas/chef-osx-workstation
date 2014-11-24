@@ -94,6 +94,7 @@ node_attributes:
         - wget
         - tmux
         - ack
+        - jenv
       casks:
         - alfred
         - mailbox
@@ -103,6 +104,8 @@ node_attributes:
         - atom
         - rowanj-gitx
         - sequel-pro
+        - java6
+        - java7
         - virtualbox
         - vagrant
         - vagrant-manager

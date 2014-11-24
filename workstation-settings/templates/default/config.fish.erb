@@ -25,3 +25,9 @@ ssh-add -l | grep "The agent has no identities"; and ssh-add
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
+
+#
+# jbenv
+#
+set PATH $HOME/.jenv/bin $PATH
+. (jenv init -)

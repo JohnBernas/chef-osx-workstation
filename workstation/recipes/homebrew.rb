@@ -5,8 +5,12 @@ directory '/usr/local/Library/Taps' do
   recursive true
 end
 
-# Required at least for sublime-text3
-execute 'tap cask' do
+execute 'tap tap tap' do
+  # Required at least for sublime-text3
   command 'brew tap "caskroom/versions"'
+
+  # Required for jenv
+  command 'brew tap "jenv/jenv"'
+
   user node['current_user']
 end
