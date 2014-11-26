@@ -6,7 +6,15 @@
 # rbenv
 #
 function rb;	rbenv version; end;
-function rbl;	rbenv versions; end;
+
+function rbl
+  if test "$argv"
+    rbenv local $argv
+  else
+    rbenv versions
+  end
+end
+
 function rbi
   if test "$argv"
     rbenv install $argv

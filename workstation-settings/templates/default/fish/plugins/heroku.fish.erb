@@ -4,6 +4,9 @@
 
 function hl       ;		heroku login; end
 
+function hps      ;		heroku ps -a $argv; end
+function hpsw     ;		heroku ps -a $argv | grep web; end
+
 function hpsql    ;		heroku pg:psql -a $argv; end
 function hcon     ;		heroku run bundle exec rails console -a $argv; end
 function hconsole ; 	hcon $argv; end
