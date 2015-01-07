@@ -1,6 +1,9 @@
 #
 # General development shortcuts
 #
+function psa; ps aux $argv; end
+function psg; ps aux | grep $argv; end
+
 
 function tld; tail -f log/development.log; end
 
