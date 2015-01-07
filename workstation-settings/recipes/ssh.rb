@@ -13,6 +13,7 @@ file "#{node['sprout']['home']}/.ssh/known_hosts" do
 end
 
 template "#{node['sprout']['home']}/.ssh/config" do
+  action :create_if_missing
   source "config.ssh.erb"
   user node['current_user']
 end
